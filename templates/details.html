@@ -1,0 +1,121 @@
+{% macro details() %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/details.css') }}">
+    <script src="https://kit.fontawesome.com/b79383e192.js" crossorigin="anonymous"></script>
+    <script>
+        function openResume(){
+            window.open("{{ url_for('static', filename='documents/resume.pdf') }}", "_blank")
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="align-block">
+        
+        <div class="mycontent revealBlocks">
+            <div class="mycontent-flex">
+                <div class="square0 revealF">
+                    <h2>Hello.....</h2>
+                    <h1>I'm <span class="red-color">LEELAPRASAD</span></h1>
+                    <h1>a <span class="red-color">FULL STACK DEVELOPER</span>...! </h1>
+                    <p>Looking for a career position where professional experience and expertise will be regarded as a wealth of an organization. I am a passionate programmer with hands-on experience gained through personal projects.</p>
+                    <div onclick="openResume()" target="_blank" class="resume">Download CV</div>
+                </div>
+                <div class="square revealImage" id="square">
+                    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile" class="photo">
+                </div>
+            </div>
+
+            <div class="blocks">
+                    <div class="block block1" onclick="location.href='#experience'">
+                        <i class="fas fa-cogs" aria-hidden="true"></i>
+                        <span>Experience</span>
+                    </div>
+                    <div class="block block2" onclick="location.href='#skills'">
+                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                        <span>Tech Stack</span>
+                    </div>
+                    <div class="block block3" onclick="location.href='#achievements'">
+                        <i class="fas fa-cogs" aria-hidden="true"></i>
+                        <span>Achievements</span>
+                    </div>
+                    <div class="block block4" onclick="location.href='#contact'">
+                        <i class="fas fa-cogs" aria-hidden="true"></i>
+                        <span>Contact Me</span>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        window.addEventListener('load', reveal);
+    
+        function reveal(){
+          var reveals = document.querySelectorAll('.revealF');
+    
+          for(var i = 0; i < reveals.length; i++){
+    
+            var windowheight = window.innerHeight;
+            var revealtop = reveals[i].getBoundingClientRect().top;
+            var revealpoint = 150;
+    
+            if(revealtop < windowheight - revealpoint){
+              reveals[i].classList.add('active');
+            }
+            else{
+              reveals[i].classList.remove('active');
+            }
+          }
+        }
+
+        window.addEventListener('load', revealImage);
+    
+        function revealImage(){
+          var reveals = document.querySelectorAll('.revealImage');
+    
+          for(var i = 0; i < reveals.length; i++){
+    
+            var windowheight = window.innerHeight;
+            var revealtop = reveals[i].getBoundingClientRect().top;
+            var revealpoint = 150;
+    
+            if(revealtop < windowheight - revealpoint){
+              reveals[i].classList.add('active');
+            }
+            else{
+              reveals[i].classList.remove('active');
+            }
+          }
+        }
+
+        window.addEventListener('load', revealBlocks);
+    
+        function revealBlocks(){
+          var reveals = document.querySelectorAll('.revealBlocks');
+    
+          for(var i = 0; i < reveals.length; i++){
+    
+            var windowheight = window.innerHeight;
+            var revealtop = reveals[i].getBoundingClientRect().top;
+            var revealpoint = 150;
+    
+            if(revealtop < windowheight - revealpoint){
+              reveals[i].classList.add('active');
+            }
+            else{
+              reveals[i].classList.remove('active');
+            }
+          }
+        }
+    </script>
+
+</body>
+</html>
+{% endmacro %}

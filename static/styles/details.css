@@ -1,0 +1,227 @@
+
+#align-block{
+    height: 100vh;
+    
+    background-color: #009FFD;
+
+    padding: 5%;
+}
+
+.mycontent{
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    padding: 5%;
+
+    height: 100%;
+    width: 100%;
+    
+    background: linear-gradient(to right,  white 0%,white 49%,orange 49%,orange 100%);
+
+    /* color: rgb(74, 30, 30); */
+    color: black;
+
+    -webkit-box-shadow: 0px 0px 19px 14px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 0px 19px 14px rgba(0,0,0,0.6);
+    box-shadow: 0px 0px 19px 14px rgba(0,0,0,0.6);
+}
+
+.red-color{
+    color: orange;
+}
+
+.mycontent > h2{
+    font-size: 1.5em;
+}
+
+.mycontent > h1{
+    font-size: 2.7em;
+}
+
+.square0 > p{
+    font-size: 1.2em;
+}
+
+.mycontent .blocks{
+    width: 90%;
+
+    display: flex;
+    justify-content: center;
+    
+    position: absolute;
+    bottom: 0;
+}
+
+.mycontent .blocks .block{
+    text-align: center;
+    border-bottom: 0px;
+}
+
+.mycontent .blocks .block:nth-child(1){
+    border-radius: 20px 0px 0px 0px;
+}
+
+.mycontent .blocks .block:nth-child(4){
+    border-radius: 0px 20px 0px 0px;
+}
+
+.block > i{
+    font-size: 2em;
+    padding: 10px;
+    width: 100%;
+}
+
+.mycontent .blocks .block1, .mycontent .blocks .block2{
+    color: black;
+    background-color: orange;
+    cursor: pointer;
+}
+
+.mycontent .blocks .block3, .mycontent .blocks .block4{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.block1{
+    border-right: 1px solid white;
+}
+
+.block3{
+    border-right: 1px solid orange;
+}
+
+.mycontent .blocks .block1:hover, .mycontent .blocks .block2:hover, .mycontent .blocks .block3:hover, .mycontent .blocks .block4:hover{
+    animation: blinker 0.5s linear infinite;
+}
+
+.square > img{
+    border-radius: 0px;
+}
+
+#square{
+    width: 40%;
+    height: 40%;
+}
+
+.mycontent-flex{
+    /* border: 1px solid black; */
+    padding: 0px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 8%; */
+}
+
+.square0{
+    width: 45%;
+    padding: 2%;
+    /* border: 1px solid black; */
+}
+
+.square{
+    width: 55%;
+    /* border: 1px solid black; */
+    /* display: flex;
+    justify-content: center; */
+}
+
+#square > img{
+    align-items: center;
+    margin-left: 9%;
+    height: 70%;
+    width: 70%;
+}
+
+.resume{
+    border: 1px solid black;
+    width: fit-content;
+    font-size: larger;
+    font-weight: bold;
+    padding: 2% 3%;
+    color: white;
+    text-align: center;
+    background-color: orange;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resume:hover{
+    color: orange;
+    background-color: aliceblue;
+}
+
+/* .mycontent .blocks .block1:hover, .mycontent .blocks .block2:hover{
+    color: gray;
+    background-color: rgb(238, 238, 236);
+}
+
+.mycontent .blocks .block3:hover, .mycontent .blocks .block4:hover{
+    color: gray;
+    background-color: rgb(242, 129, 229);
+} */
+
+/* .mycontent .blocks .block3{
+    color: pink;
+    background-color: gray;
+} */
+
+.block > span{
+    font-weight: bold;
+}
+
+
+
+
+
+@keyframes blinker {
+    50%{
+      opacity: 0.7;
+    }
+}
+
+
+
+.revealBlocks{
+	position: relative;
+	transform: translateY(5vh);
+	opacity: 0;
+	transition: all 2s ease;
+}
+  
+.revealBlocks.active{
+	transform: translateY(0px);
+	opacity: 1;
+}
+
+
+.revealF{
+	position: relative;
+	transform: translateX(-5vw);
+	opacity: 0;
+	transition: all 2s ease;
+}
+  
+.revealF.active{
+    transition-delay: 2s;
+	transform: translateX(0px);
+	opacity: 1;
+}
+
+
+.revealImage{
+	position: relative;
+	transform: translateX(5vw);
+	opacity: 0;
+	transition: all 2s ease;
+}
+
+.revealImage.active{
+    transition-delay: 4s;
+	transform: translateX(0px);
+	opacity: 1;
+}
